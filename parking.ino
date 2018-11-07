@@ -1,8 +1,13 @@
 #include "parking.h"
+#include <Wire.h>
+#include <LiquidCrystal.h>
+#include <EEPROM.h>
+#include "affiche.h"
 
 int compteur = 0;
 
 void setup() {
+  Wire.begin();
   Serial1.begin(1200);
   pinMode(PAS1, OUTPUT);  // declaration de la broche 10 en sortie
   pinMode(PAS2, OUTPUT);  // declaration de la broche 11 en sortie
@@ -19,6 +24,7 @@ void loop() {
 
   if (digitalRead(BOUCLEAMONT) == 1 && digitalRead(BOUCLEAVAL) == 0)
   {
+                        //afficher "bonjour"
     delay(20);
     if (digitalRead(VALIDATION) == 1) {
       delay(20);

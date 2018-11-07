@@ -36,13 +36,13 @@ int chrono(int chronoSeconde)
   static unsigned long premierAppel= 0;                    //savoir si il s'agit du premier appel
   static unsigned long tempPasse;                        //variable statique qui contiendra le temps ecoule
   unsigned long tempPresent;
-  if (premierAppel==0){ // test si premier appel est egale a 0 
-    tempPasse=millis(); // affectation de millis a la variable tempPasse
-    premierAppel=1; // affectation de la valeur 1 a premierAppel 
+  if (premierAppel==0){ // test si premier appel est egale à 0 
+    tempPasse=millis(); // affectation de millis à la variable tempPasse
+    premierAppel=1; // affectation de la valeur 1 à premierAppel 
     return 0; // retourne 0
   }
   tempPresent=millis();
-  if ((tempPresent-tempPasse) >=(chronoSeconde*1000)){ // test si l'ecart entre temps present et temp passe est superieur ou egale a la variable chronos *1000 
+  if ((tempPresent-tempPasse) >=(chronoSeconde*1000)){ // test si l'ecart entre temps present et temps passe est superieur ou égale a la variable chrono *1000 
     premierAppel = 0; //affectation de 0 a la variable premierAppel
     return 1;  // retourne 1
   }
