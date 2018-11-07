@@ -1,5 +1,10 @@
+#include <Wire.h>
+#include <LiquidCrystal.h>
+#include <EEPROM.h>
+
 #include "parking.h"
 #include "Arduino.h"
+
 
 void miseEnMarche(int tourSaisie, int rotation) {
   int tour = 0; //initialisation de la variable tour à 0
